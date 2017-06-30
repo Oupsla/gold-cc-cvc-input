@@ -147,6 +147,11 @@ Custom property | Description | Default
           size$="[[size]]">
       </iron-input>
 
+      <div class="icon-container" slot="suffix">
+        <iron-icon id="icon" src="cvc_hint.png" hidden$="[[_amex]]" alt="cvc"></iron-icon>
+        <iron-icon id="amexIcon" hidden$="[[!_amex]]" src="cvc_hint_amex.png" alt="amex cvc"></iron-icon>
+      </div>
+      
       <template is="dom-if" if="[[errorMessage]]">
         <paper-input-error aria-live="assertive" slot="add-on">[[errorMessage]]</paper-input-error>>
       </template>
