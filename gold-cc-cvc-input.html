@@ -151,7 +151,7 @@ Custom property | Description | Default
         <iron-icon id="icon" src="cvc_hint.png" hidden$="[[_amex]]" alt="cvc"></iron-icon>
         <iron-icon id="amexIcon" hidden$="[[!_amex]]" src="cvc_hint_amex.png" alt="amex cvc"></iron-icon>
       </div>
-      
+
       <template is="dom-if" if="[[errorMessage]]">
         <paper-input-error aria-live="assertive" slot="add-on">[[errorMessage]]</paper-input-error>>
       </template>
@@ -254,6 +254,10 @@ Custom property | Description | Default
 
         _computeIsAmex: function(cardType) {
           return cardType.toLowerCase() == 'amex';
+        },
+
+        focusNative: function() {
+          this.$.nativeInput.focus();
         },
 
         /**
